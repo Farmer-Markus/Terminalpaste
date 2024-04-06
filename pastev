@@ -1,0 +1,55 @@
+#!/bin/bash
+#https://github.com/Farmer-Markus/Terminalpaste
+#paste files copied by copyc
+
+if [ ! -e "/dev/shm" ]; then saveloc="/tmp/"; else saveloc="/dev/shm"; fi
+if [ "$1" == "" ]; then pastepath="$(readlink -f .)"; else pastepath="$1"; fi
+copypath="$(cat "$saveloc/terminalpaste")"
+
+sh_help () {
+  echo 'Usage:'
+  echo '      pastev'
+  echo '      pastev <folder> (optional)'
+}
+
+run () {
+
+  if [ ! -e "$saveloc/terminalpaste" ]
+     then
+
+         echo "ERROR: Nothing to paste"
+         exit
+  fi
+
+  if [ -e "$pastepath/$(basename "$copypath")" ]
+     then
+
+         echo "ERROR: Cant paste here! Already exists."
+         exit
+  fi
+
+  cp -r "$copypath" "$pastepath/" &> /dev/null
+
+  if [ ! -e "$pastepath/$(basename "$copypath")" ]
+     then
+
+         echo "ERROR: Failed pasting $(basename "$copypath") to "$pastepath""
+         exit
+     else
+
+         echo "Pasted '"$copypath"' to '"$pastepath/"'"
+  fi
+}
+
+for i in "$@"
+do
+case $i in
+    -?|-h|--h|--help)
+    sh_help
+    ;;
+    -*)
+    echo 'pastev: Unrecognized option »'$i'«
+try „pastev --help“'
+esac
+done
+run

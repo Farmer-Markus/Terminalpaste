@@ -5,8 +5,8 @@ Use
 `copyc <file/folder>`
 to save file or folder into clipboard.
 
-To paste your can use
-`pastev` (paste file from cipboard in current direktory)
-or
-`pastev <path>` (paste file from cipboard into relative/absolute path )
+To paste your can use <br />
+`pastev` (paste file from cipboard in current direktory) <br />
+or <br />
+`pastev <path>` (paste file from cipboard into relative/absolute path ) <br />
 in same or another terminal on the same machine.

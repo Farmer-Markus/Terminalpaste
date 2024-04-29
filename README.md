@@ -9,4 +9,4 @@ To paste your can use
 `pastev` (paste file from cipboard in current direktory)
 or
 `pastev <path>` (paste file from cipboard into relative/absolute path )
-in same or another terminal.
+in same or another terminal on the same machine.

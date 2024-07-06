@@ -10,3 +10,5 @@ To paste your can use <br />
 or <br />
 `pastev <path>` (paste file from cipboard into relative/absolute path ) <br />
 in same or another terminal on the same machine.
+
+You can also use my [ppa repository](https://github.com/Farmer-Markus/linux-ppa) to get always the latest updates.
